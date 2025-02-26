@@ -11,9 +11,12 @@ type ConfigArgs = {
 export function eslintConfig({ files, tsconfigRootDir }: ConfigArgs) {
   return tseslint.config(
     eslint.configs.recommended,
-    ...tseslint.configs.recommendedTypeChecked,
+    tseslint.configs.recommendedTypeChecked,
     prettierPlugin,
     importPlugin.flatConfigs.recommended,
+    {
+      ignores: ["eslint.config.mjs", "dist/**"],
+    },
     {
       files: files,
       languageOptions: {
