@@ -5,9 +5,10 @@ import importPlugin from "eslint-plugin-import";
 
 type ConfigArgs = {
   files: string[];
+  tsconfigRootDir: string;
 };
 
-export function eslintConfig({ files }: ConfigArgs) {
+export function eslintConfig({ files, tsconfigRootDir }: ConfigArgs) {
   return tseslint.config(
     eslint.configs.recommended,
     ...tseslint.configs.recommendedTypeChecked,
@@ -19,7 +20,7 @@ export function eslintConfig({ files }: ConfigArgs) {
         parser: tseslint.parser,
         parserOptions: {
           projectService: true,
-          tsconfigRootDir: import.meta.dirname,
+          tsconfigRootDir: tsconfigRootDir,
           ecmaVersion: "latest",
           sourceType: "module",
         },
