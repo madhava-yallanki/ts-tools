@@ -1,0 +1,39 @@
+{
+  "name": "@madhava-yallanki/ts-tools",
+  "version": "1.0.1",
+  "author": {
+    "name": "Madhava Yallanki",
+    "email": "madhava@yallanki.dev"
+  },
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/lib/index.js",
+  "types": "dist/lib/index.d.ts",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "clean": "rm -rf node_modules package-lock.json dist",
+    "copy-json": "cp lib/*.json dist/lib/",
+    "build": "tsc && npm run copy-json"
+  },
+  "files": [
+    "dist/lib/**/*"
+  ],
+  "dependencies": {
+    "@eslint/js": "^9.20.0",
+    "@typescript-eslint/parser": "^8.24.0",
+    "eslint": "^9.20.1",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-import-resolver-typescript": "^3.8.0",
+    "eslint-plugin-prettier": "^5.2.3",
+    "prettier": "^3.5.1",
+    "typescript-eslint": "^8.24.0",
+    "eslint-plugin-import": "^2.31.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  }
+}
